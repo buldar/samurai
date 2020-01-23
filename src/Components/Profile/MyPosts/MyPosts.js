@@ -11,11 +11,8 @@ const MyPosts = () => {
                 <button> OK</button>
             </div>
             <div className='posts'>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
+                <Post message="Hey, salaga!"/>
+                <Post message="Omg! Look like one more..."/>
             </div>
         </div>
     )
