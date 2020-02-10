@@ -1,3 +1,4 @@
+import {rerenderTree} from "../render";
 
 let state = {
     profilePage: {
@@ -33,7 +34,11 @@ let state = {
             {id: 6, name: 'странный человек', ava: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQZ-Rkebooxm2phQGSrLoLtuAJYKLpCFKuWDIOG-MDZ5gTsQcgl'},
         ],
     }
+}
 
+export let addPost =(text) => {
+    state.profilePage.posts.push({id: 5, message: text, likesCount: 666});
+    rerenderTree(state);
 }
 
 export default state;
