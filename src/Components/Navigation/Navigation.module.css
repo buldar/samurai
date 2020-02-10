@@ -10,3 +10,7 @@
 .item a.active {
     color: gold;
 }
+.navifriends img {
+    width: 50px;
+    border-radius: 25px;
+}

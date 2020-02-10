@@ -3,8 +3,10 @@ import s from './../Dialogs.module.css';
 import {NavLink} from "react-router-dom";
 
 const Message = (props) => {
+    let classForMessages = (props.id === 1)? s.mymessage:s.notmymessage;
+
     return (
-        <div className={s.message}>{props.message}</div>
+        <div className={classForMessages}>{props.message}</div>
     )
 }
 

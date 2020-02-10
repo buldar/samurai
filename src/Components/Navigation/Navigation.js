@@ -1,8 +1,11 @@
 import React from "react";
 import s from './Navigation.module.css';
 import {NavLink} from "react-router-dom";
+import Sidefriends from "./Sidefriends/Sidefriends";
+import Post from "../Profile/MyPosts/Post/Post";
 
-const Navigation = () => {
+const Navigation = (props) => {
+    let naviElements = props.sidebar.friends.map(x => <Sidefriends ava={x.ava} name={x.name}/>)
     return (
         <div className={s.nav}>
             <div className={s.item}>
@@ -19,6 +22,15 @@ const Navigation = () => {
             </div>
             <div className={s.item}>
                 <NavLink to ='settings'activeClassName={s.active}>Settings</NavLink>
+            </div>
+            <div>
+                <div>
+                    <h1>FRIENDS</h1>
+                </div>
+                <div className={s.navifriends}>
+                    {/*<Sidefriends friends={props.sidebar}/>*/}
+                    {naviElements}
+                </div>
             </div>
         </div>
     )
