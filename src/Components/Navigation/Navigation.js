@@ -23,12 +23,11 @@ const Navigation = (props) => {
             <div className={s.item}>
                 <NavLink to ='settings'activeClassName={s.active}>Settings</NavLink>
             </div>
-            <div>
-                <div>
+            <div className={s.navifriends}>
+                <div >
                     <h1>FRIENDS</h1>
                 </div>
-                <div className={s.navifriends}>
-                    {/*<Sidefriends friends={props.sidebar}/>*/}
+                <div className={s.testclass}>
                     {naviElements}
                 </div>
             </div>
