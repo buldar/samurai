@@ -1,5 +1,5 @@
-import {rerenderTree} from "../render";
-
+let rerenderTree =()=> {
+    }
 let state = {
     profilePage: {
         posts: [
@@ -7,7 +7,8 @@ let state = {
             {id: 2, message: 'Omg! Look like one more...', likesCount: 31},
             {id: 3, message: 'So sad...', likesCount: 6},
             {id: 4, message: 'TEST ', likesCount: 3},
-        ]
+        ],
+        newPostText: '',
     },
     dialogsPage: {
         dialogs: [
@@ -36,9 +37,18 @@ let state = {
     }
 }
 
-export let addPost =(text) => {
-    state.profilePage.posts.push({id: 5, message: text, likesCount: 666});
+export const addPost =() => {
+    state.profilePage.posts.push({id: 5, message: state.profilePage.newPostText, likesCount: 666});
     rerenderTree(state);
+    state.profilePage.newPostText='';
+}
+export const currentNewPostText = (newText) =>{
+    state.profilePage.newPostText = newText;
+    rerenderTree(state);
+}
+
+export const subscribe = (observer) => {
+    rerenderTree = observer;
 }
 
 export default state;
